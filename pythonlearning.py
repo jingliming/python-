@@ -70,3 +70,30 @@ print(result.group())
 groupmatch = re.compile(r'(\d\d\d)-(\d\d\d\d)-(\d\d\d)')
 result = groupmatch.findall('this is group of number 123-4567-890 and 333-4444-555')
 print(result)
+
+#正则表达式总结
+#?匹配零次或一次前面的分组。
+#*匹配零次或多次前面的分组。
+#+匹配一次或多次前面的分组。
+#{n}匹配 n 次前面的分组。
+#{n,}匹配 n 次或更多前面的分组。
+#{,m}匹配零次到 m 次前面的分组。
+#{n,m}匹配至少 n 次、至多 m 次前面的分组。
+#{n,m}?或*?或+?对前面的分组进行非贪心匹配。
+#^spam 意味着字符串必须以 spam 开始。
+#spam$意味着字符串必须以 spam 结束。
+#.匹配所有字符，换行符除外。
+#\d、 \w 和\s 分别匹配数字、单词和空格。
+#\D、 \W 和\S 分别匹配除数字、单词和空格外的所有字符。
+#[abc]匹配方括号内的任意字符（诸如 a、 b 或 c）。
+#[^abc]匹配不在方括号内的任意字符
+
+#使用sub进行内容替换
+agentNamesRegex = re.compile(r'Agent (\w)\w*')
+print(agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol that Agent Eve knew Agent Bob was a double agent.'))
+
+#通配符.  .*可以匹配所有字符
+
+#re.VERBOSE 来编写注释
+#re.IGNORECASE 来忽略大小写
+#re.DOTALL来匹配包换换行符在内的所有字符
