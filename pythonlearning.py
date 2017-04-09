@@ -9,3 +9,13 @@ import re
 numbercatch = re.compile(r'\d\d\d\d-\d\d\d-\d\d\d')
 result = numbercatch.search('this is a number as 1234-567-890')
 print(result.group())
+
+
+#使用括号进行分组
+
+groupmatch = re.compile(r'(\d\d\d)-(\d\d\d\d)-(\d\d\d)')
+result = groupmatch.search('this is group of number 123-4567-890')
+print(result.group(1))
+print(result.group(2))
+print(result.group(0))
+print(result.group())
