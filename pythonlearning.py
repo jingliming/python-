@@ -4,6 +4,7 @@ python 使用正则表达式进行匹配步骤
 2、创建匹配
 3、调用查找方法，返回查找结果
 4、查找结果使用group方法获取
+
 '''
 import re
 numbercatch = re.compile(r'\d\d\d\d-\d\d\d-\d\d\d')
